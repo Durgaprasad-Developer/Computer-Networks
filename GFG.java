@@ -22,6 +22,6 @@ class GFG{
     }
     static void addEdge(ArrayList<ArrayList<Integer>> adj, int v, int u){
         adj.get(v).add(u);
-        adj.get(u).add(v);
+        adj.get(u).add(v); //for directed graph just remove this line
     }
 }
