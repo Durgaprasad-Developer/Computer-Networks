@@ -5,10 +5,17 @@ print("Socket created")
 
 interface = "127.0.0.1"
 port = 12345
-socket.bind((interface, port))
-print((f"socket bound to port: {port}"))
+sock.bind((interface, port))
+print(f"socket bound to port: {port}")
 
-socket.listen()
+sock.listen()
 print("Socket is listening")
 
-conn, addr = sock.accept()
+while True:  # keep server running forever
+    conn, addr = sock.accept()
+    print(f"Got connection from client: {addr}")
+
+    data = conn.recv(1024)
+    print(f"Data from client = {data.decode()}")
+
+    conn.close()  # close connection but keep server alive
