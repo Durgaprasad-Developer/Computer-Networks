@@ -11,11 +11,11 @@ print(f"socket bound to port: {port}")
 sock.listen()
 print("Socket is listening")
 
-while True:  # keep server running forever
+while True:  
     conn, addr = sock.accept()
     print(f"Got connection from client: {addr}")
 
     data = conn.recv(1024)
     print(f"Data from client = {data.decode()}")
 
-    conn.close()  # close connection but keep server alive
+    conn.close()  
