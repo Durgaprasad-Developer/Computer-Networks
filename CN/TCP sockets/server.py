@@ -21,7 +21,7 @@ def start_server():
             break
     conn.close()
     server_socket.close()
-    print("Server shutdow")
+    print("Server shutdown")
 
 if __name__ == "__main__":
     start_server()
